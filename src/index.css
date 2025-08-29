@@ -4,6 +4,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import sphere animations */
+@import './styles/sphere-animations.css';
+
+/* Global conversation state variables */
+:root {
+  --conversation-intensity: 0;
+  --human-speaking: 0;
+  --ai-speaking: 0;
+  --sphere-morph-speed: 1;
+}
+
 body {
   margin: 0;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -49,4 +60,95 @@ code {
 
 .animate-spin-slow {
   animation: spin-slow 8s linear infinite;
+}
+
+/* Enhanced interactive states */
+.sphere-interactive:hover {
+  transform: scale(1.02) !important;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sphere-interactive:hover .sphere-glass-layer {
+  backdrop-filter: blur(35px) saturate(250%);
+  background: rgba(255, 255, 255, 0.18);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Conversation state indicators */
+.conversation-active {
+  --conversation-intensity: 1;
+}
+
+.human-speaking {
+  --human-speaking: 1;
+}
+
+.ai-speaking {
+  --ai-speaking: 1;
+}
+
+/* Enhanced frequency band animations */
+@keyframes frequencyBandPulse {
+  0% {
+    transform: translateX(-50%) translateY(var(--distance)) rotate(var(--angle)) scaleY(0.4);
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) translateY(var(--distance)) rotate(var(--angle)) scaleY(1.2);
+    opacity: 0.8;
+  }
+}
+
+/* Watery bubble flow */
+@keyframes bubbleWaterFlow {
+  0% {
+    transform: translateY(100%) translateX(0px) scale(0.5);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(80%) translateX(10px) scale(0.8);
+  }
+  50% {
+    transform: translateY(50%) translateX(-5px) scale(1.1);
+  }
+  80% {
+    transform: translateY(20%) translateX(8px) scale(0.9);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-20%) translateX(0px) scale(0.3);
+    opacity: 0;
+  }
+}
+
+/* Organic morphing for conversation states */
+@keyframes conversationMorph {
+  0% {
+    border-radius: 50% 50% 50% 50%;
+    transform: rotate(0deg) scale(1);
+  }
+  20% {
+    border-radius: 60% 40% 65% 35%;
+    transform: rotate(72deg) scale(1.02);
+  }
+  40% {
+    border-radius: 35% 65% 40% 60%;
+    transform: rotate(144deg) scale(0.98);
+  }
+  60% {
+    border-radius: 65% 35% 55% 45%;
+    transform: rotate(216deg) scale(1.04);
+  }
+  80% {
+    border-radius: 45% 55% 35% 65%;
+    transform: rotate(288deg) scale(0.96);
+  }
+  100% {
+    border-radius: 50% 50% 50% 50%;
+    transform: rotate(360deg) scale(1);
+  }
 }

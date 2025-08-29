@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button, IconButton, LeftArrowIcon, RightArrowIcon, CrossIcon } from './ui';
 import { useVoice } from '../hooks/useVoice';
 import { useEffect, useRef } from 'react';
+import VoiceVisualization from './VoiceVisualization';
 
 const VoiceSelection = () => {
   const navigate = useNavigate();
@@ -57,24 +58,21 @@ const VoiceSelection = () => {
         Choose a voice
       </h1>
 
-      {/* Video in center - responsive sizing */}
+      {/* Dynamic Sphere in center - responsive sizing */}
       <div className="relative flex-1 flex items-center justify-center z-10 w-full max-w-4xl">
-        <video
-          className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[28rem] lg:h-[28rem] xl:w-[32rem] xl:h-[32rem] 2xl:w-[36rem] 2xl:h-[36rem] object-cover rounded-full"
-          muted
-          loop
-          playsInline
-          autoPlay
-          style={{
-            filter: 'brightness(1.2) contrast(1.1) saturate(1.3)',
-            mixBlendMode: 'screen'
-          }}
-        >
-          <source src="/original-6433de79a34f799bf4a634cbbdda7967.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-40 rounded-full" />
+        <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[28rem] lg:h-[28rem] xl:w-[32rem] xl:h-[32rem] 2xl:w-[36rem] 2xl:h-[36rem]">
+          <VoiceVisualization
+            isListening={false}
+            isThinking={true}
+            isResponding={false}
+            audioLevel={0.3}
+            responseLevel={0}
+            frequencyData={Array.from({ length: 32 }, () => Math.random() * 0.6)}
+            conversationDuration={0}
+            size="fullscreen"
+            className="w-full h-full"
+          />
+        </div>
       </div>
 
       {/* Voice selection BELOW video */}

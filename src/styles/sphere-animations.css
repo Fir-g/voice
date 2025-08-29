@@ -1,0 +1,357 @@
+/* Advanced 3D Sphere Animations */
+
+@keyframes sphereWaveEmission {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(2.8);
+    opacity: 0;
+  }
+}
+
+@keyframes sphereParticleFloat {
+  0% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-40px) translateX(15px) scale(0.3);
+    opacity: 0;
+  }
+}
+
+@keyframes sphereLiquidMorph {
+  0% {
+    border-radius: 50% 50% 50% 50%;
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    border-radius: 65% 35% 70% 30%;
+    transform: rotate(90deg) scale(1.03);
+  }
+  50% {
+    border-radius: 30% 70% 35% 65%;
+    transform: rotate(180deg) scale(0.98);
+  }
+  75% {
+    border-radius: 70% 30% 65% 35%;
+    transform: rotate(270deg) scale(1.05);
+  }
+  100% {
+    border-radius: 50% 50% 50% 50%;
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes sphereHolographicShift {
+  0% {
+    background-position: 0% 50%;
+    filter: hue-rotate(0deg);
+  }
+  25% {
+    background-position: 100% 0%;
+    filter: hue-rotate(90deg);
+  }
+  50% {
+    background-position: 100% 100%;
+    filter: hue-rotate(180deg);
+  }
+  75% {
+    background-position: 0% 100%;
+    filter: hue-rotate(270deg);
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes sphereCosmicPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(2.2);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(3.5);
+    opacity: 0;
+  }
+}
+
+@keyframes sphereEnergyFlow {
+  0% {
+    transform: translateX(-120%) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(120%) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+@keyframes frequencyPulse {
+  0% {
+    transform: translateX(-50%) translateY(-35px) rotate(var(--angle)) scaleY(0.3);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-35px) rotate(var(--angle)) scaleY(1);
+  }
+}
+
+@keyframes rippleExpand {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+@keyframes waveEmission {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes bubbleFloat {
+  0% {
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  33% {
+    transform: translateY(-15px) translateX(8px) scale(1.1);
+  }
+  66% {
+    transform: translateY(10px) translateX(-5px) scale(0.9);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+}
+
+@keyframes particleOrbit {
+  0% {
+    transform: rotate(0deg) translateX(80px) scale(0.5);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg) translateX(80px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes liquidFlow {
+  0% {
+    transform: translateY(100%) scaleY(0.5);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%) scaleY(1);
+  }
+  100% {
+    transform: translateY(-100%) scaleY(0.3);
+    opacity: 0;
+  }
+}
+
+@keyframes wateryDistortion {
+  0% {
+    transform: translateX(0px) translateY(0px) scale(1);
+    filter: blur(0px);
+  }
+  25% {
+    transform: translateX(3px) translateY(-2px) scale(1.02);
+    filter: blur(0.5px);
+  }
+  50% {
+    transform: translateX(-2px) translateY(4px) scale(0.98);
+    filter: blur(1px);
+  }
+  75% {
+    transform: translateX(4px) translateY(-1px) scale(1.01);
+    filter: blur(0.3px);
+  }
+  100% {
+    transform: translateX(0px) translateY(0px) scale(1);
+    filter: blur(0px);
+  }
+}
+
+/* Enhanced animation classes */
+.animate-ripple-expand {
+  animation: rippleExpand 2s ease-out infinite;
+}
+
+.animate-wave-emission {
+  animation: waveEmission 1.2s ease-out infinite;
+}
+
+.animate-bubble-float {
+  animation: bubbleFloat 4s ease-in-out infinite;
+}
+
+.animate-particle-orbit {
+  animation: particleOrbit 6s linear infinite;
+}
+
+.animate-liquid-flow {
+  animation: liquidFlow 3s ease-in-out infinite;
+}
+
+.animate-watery-distortion {
+  animation: wateryDistortion 5s ease-in-out infinite;
+}
+
+/* Responsive sphere states */
+.sphere-listening {
+  animation: sphereLiquidMorph 3s ease-in-out infinite, wateryDistortion 4s ease-in-out infinite;
+}
+
+.sphere-thinking {
+  animation: sphereLiquidMorph 5s ease-in-out infinite, sphereHolographicShift 8s linear infinite;
+}
+
+.sphere-responding {
+  animation: sphereLiquidMorph 2s ease-in-out infinite, wateryDistortion 2.5s ease-in-out infinite;
+}
+
+/* Premium glassmorphism effects */
+.sphere-glass-layer {
+  backdrop-filter: blur(25px) saturate(200%);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Cosmic energy trails */
+.sphere-energy-trail {
+  position: absolute;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, 
+    transparent, 
+    rgba(59, 130, 246, 0.9), 
+    rgba(147, 197, 253, 0.6), 
+    transparent
+  );
+  animation: sphereEnergyFlow 2.5s linear infinite;
+  filter: blur(0.5px);
+}
+
+/* Enhanced neon glow variants */
+.sphere-glow-blue {
+  box-shadow: 
+    0 0 80px 25px rgba(59, 130, 246, 0.5),
+    0 0 160px 50px rgba(147, 197, 253, 0.3),
+    0 0 240px 80px rgba(59, 130, 246, 0.15),
+    inset 0 0 60px rgba(255, 255, 255, 0.4);
+}
+
+.sphere-glow-purple {
+  box-shadow: 
+    0 0 100px 35px rgba(168, 85, 247, 0.6),
+    0 0 200px 70px rgba(196, 181, 253, 0.4),
+    0 0 300px 100px rgba(168, 85, 247, 0.2),
+    inset 0 0 80px rgba(255, 255, 255, 0.35);
+}
+
+.sphere-glow-green {
+  box-shadow: 
+    0 0 120px 40px rgba(34, 197, 94, 0.7),
+    0 0 240px 80px rgba(74, 222, 128, 0.5),
+    0 0 360px 120px rgba(34, 197, 94, 0.25),
+    inset 0 0 80px rgba(255, 255, 255, 0.45);
+}
+
+/* Frequency visualization */
+.frequency-band {
+  position: absolute;
+  background: linear-gradient(to top, 
+    rgba(59, 130, 246, 0.9), 
+    rgba(147, 197, 253, 0.6), 
+    rgba(255, 255, 255, 0.3)
+  );
+  border-radius: 2px;
+  filter: blur(0.5px);
+  animation: frequencyPulse 0.1s ease-out;
+}
+
+/* Watery bubble effects */
+.water-bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, 
+    rgba(255, 255, 255, 0.8), 
+    rgba(147, 197, 253, 0.4), 
+    rgba(59, 130, 246, 0.2)
+  );
+  animation: bubbleFloat 6s ease-in-out infinite;
+  filter: blur(1px);
+}
+
+/* Conversation longevity indicator */
+.longevity-ring {
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  border: 2px solid rgba(59, 130, 246, 0.3);
+  animation: sphereCosmicPulse 4s ease-in-out infinite;
+}
+
+/* Interactive hover states */
+.sphere-container:hover {
+  transform: scale(1.02) !important;
+  transition: transform 0.3s ease-out;
+}
+
+.sphere-container:hover .sphere-glass-layer {
+  backdrop-filter: blur(30px) saturate(220%);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .frequency-band {
+    width: 2px;
+  }
+  
+  .water-bubble {
+    filter: blur(0.5px);
+  }
+  
+  .sphere-energy-trail {
+    width: 2px;
+  }
+}
